@@ -30,11 +30,11 @@ do
         day=$(echo ${timeStampOnly} | awk -F':' '{ print $3 }')
 
         # Assemble directory name
-        directoryName="${year}${month}${day}_"
-        #echo "Move '${file}' to '${PATH_PREFIX}${directoryName}'"
+        directoryName="${year}${month}${day}_/"
 
         # Create the directory and move the file
         mkdir -p ${PATH_PREFIX}${directoryName}
+        echo "Move "${file}" ${PATH_PREFIX}${directoryName}"
         mv "${file}" ${PATH_PREFIX}${directoryName}
     fi
 done
